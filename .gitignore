@@ -21,3 +21,5 @@ coverage
 # Local ENV
 src/deployments/local.json
 src/deployments/local-ganache.json
+
+.env
