@@ -12,13 +12,13 @@ module.exports = {
       gas: 4712388
     },
     rinkeby: {
-      provider: () => new HDWalletProvider(process.env.mnemonic, process.env.RINKEBY_URL),
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.RINKEBY_URL),
       network_id: "4", // rinkeby network ID
       from: process.env.ADDRESS, // default address to use for any transaction Truffle makes during migrations
       gas: 4612388 // Gas limit used for deploys
     },
-    koven: {
-      provider: () => new HDWalletProvider(process.env.mnemonic, process.env.KOVAN_URL),
+    kovan: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.KOVAN_URL),
       network_id: "3", // rinkeby network ID
       from: process.env.ADDRESS, // default address to use for any transaction Truffle makes during migrations
       gas: 4612388 // Gas limit used for deploys
