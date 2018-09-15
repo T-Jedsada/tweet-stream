@@ -1,5 +1,6 @@
 pragma solidity ^0.4.24;
 
+
 contract TweetStream {
 
     event newTweet(bytes32 message, bytes8 mood, bytes32 name);
@@ -17,17 +18,17 @@ contract TweetStream {
     function register(bytes32 name) public {
         require(users[msg.sender] == 0x0);
         users[msg.sender] = name;
-        emit newUser(name,msg.sender);
+        emit newUser(name, msg.sender);
     }
 
     function getUserName(address account) public view returns (bytes32 name){
         return users[account];
     }
 
-    function tweet(bytes32 message,bytes8 mood) public {
+    function tweet(bytes32 message, bytes8 mood) public {
         require(getUserName(msg.sender) != 0x0);
-        tweets.push(Tweet(message,mood,msg.sender));
-        emit newTweet(message,mood,users[msg.sender]);
+        tweets.push(Tweet(message, mood, msg.sender));
+        emit newTweet(message, mood, users[msg.sender]);
     }
 
 }
